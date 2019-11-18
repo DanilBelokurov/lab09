@@ -11,10 +11,8 @@ public class ComputerClub {
 		this.computers = computers;
 		this.customers = new ArrayList<Integer>(customers);
 		
-		for(int i = 0; i < customers; i++) {
+		for(int i = 0; i < customers; i++)
 			this.customers.add((int) (Math.random() * 8 + 1) );
-		}
-		
 		logic();
 	}
 	
@@ -34,12 +32,20 @@ public class ComputerClub {
 			threads[i].start();
 		}
 			
-		for (int i = queue; i < customers.size(); i++) {
-			if(!threads[i % computers].isAlive()) {
-				threads[i % computers] = new Computer(customers.get(i), i, i % computers);
-				threads[i % computers].start();
-			} else
-				i--;
+		for (int i = queue; i < customers.size(); i++ ) {
+
+			for(int j = 0; j < computers;){
+				if(!threads[j].isAlive()) {
+					threads[j] = new Computer(customers.get(i), i, j);
+					threads[j].start();
+					break;
+				} else if(j + 1 == computers){
+					j = 0;
+				} else {
+					j++;
+				}
+				
+			}
 		}
 	}
 }

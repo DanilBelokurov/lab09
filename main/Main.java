@@ -7,7 +7,7 @@ public class Main {
 
 	public synchronized static void main(String[] args) {
 
-		//Основная лаба
+		//Main lab
 		/*
 		 * Object ob1 = new Object(); Object ob2 = new Object();
 		 * 
@@ -16,7 +16,7 @@ public class Main {
 		 * sync1.start(); sync2.start();
 		 */
 		
-		//Доп
+		//Add
 		ComputerClub cc = new ComputerClub(5,2);
 	}
 }

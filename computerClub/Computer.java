@@ -15,7 +15,7 @@ public class Computer extends Thread{
 	@Override
 	public synchronized void run() {
 		
-		System.out.println("Customer " + user + " is ordered computer " + computerIdx + " on " + time*15 + " minutes.");
+		System.out.println("Customer " + user + " is ordered computer " + computerIdx + " on " + time * 15 + " minutes.");
 		
 		try {
 			sleep(time*15*1000);
